@@ -4,20 +4,43 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Bootstrap 101 Template</title>
+		<title>Welcome</title>
 		<!-- Bootstrap -->
-		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->  
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">		
 		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/chart.js/dist/Chart.min.js"></script>
+		<script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
 		<!-- Custom styles for this template -->
-		<link href="dashboard.css" rel="stylesheet">
+		<link href="dashboard.css" rel="stylesheet">		
+		<script>
+			angular.module("app", ["chart.js"])
+				// Optional configuration
+				.config(['ChartJsProvider', function (ChartJsProvider) {
+					// Configure all charts
+					ChartJsProvider.setOptions({
+					chartColors: ['#FF5252', '#FF8A80'],
+					responsive: false
+					});
+					// Configure all line charts
+					ChartJsProvider.setOptions('line', {
+					showLines: false
+					});
+				}])
+				.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
+
+					$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+					$scope.series = ['Series A', 'Series B'];
+					$scope.data = [
+						[65, 59, 80, 81, 56, 55, 40],
+						[28, 48, 40, 19, 86, 27, 90]
+					];
+					$scope.onClick = function (points, evt) {
+						console.log(points, evt);
+					};
+				}]);
+		</script>
 	</head>
-	<body>
+	<body ng-app="app">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-2 sidebar">
@@ -28,13 +51,12 @@
 						<li><a href="#">Export</a></li>
 					</ul>			
 				</div>
-				<div class="col-md-10 main">
+				<div class="col-md-10 main" ng-controller="LineCtrl">
 					<h1 class="page-header">Dashboard</h1>
+					<canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-click="onClick"></canvas> 
 				</div>
 			</div>
 		</div><!-- .container-fluid -->
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
