@@ -1,0 +1,25 @@
+{
+  "name": "oauth",
+  "homepage": "https://github.com/spawn57/oauth",
+  "authors": [
+    "sunil <skhiatani@gmail.com>"
+  ],
+  "description": "simple oauth app",
+  "main": "index.html",
+  "keywords": [
+    "learning",
+    "oauth"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}
