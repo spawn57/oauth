@@ -1,0 +1,24 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "Learning oauth",
+  "main": "bindings.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spawn57/oauth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spawn57/oauth/issues"
+  },
+  "homepage": "https://github.com/spawn57/oauth#readme"
+}
