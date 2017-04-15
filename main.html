@@ -7,38 +7,15 @@
 		<title>Welcome</title>
 		<!-- Bootstrap -->
 		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">		
+		<!-- Custom styles for this template -->
+		<link href="dashboard.css" rel="stylesheet">		
+		<!-- scripts -->
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/chart.js/dist/Chart.min.js"></script>
 		<script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-		<!-- Custom styles for this template -->
-		<link href="dashboard.css" rel="stylesheet">		
-		<script>
-			angular.module("app", ["chart.js"])
-				// Optional configuration
-				.config(['ChartJsProvider', function (ChartJsProvider) {
-					// Configure all charts
-					ChartJsProvider.setOptions({
-					chartColors: ['#FF5252', '#FF8A80'],
-					responsive: false
-					});
-					// Configure all line charts
-					ChartJsProvider.setOptions('line', {
-					showLines: false
-					});
-				}])
-				.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
-
-					$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-					$scope.series = ['Series A', 'Series B'];
-					$scope.data = [
-						[65, 59, 80, 81, 56, 55, 40],
-						[28, 48, 40, 19, 86, 27, 90]
-					];
-					$scope.onClick = function (points, evt) {
-						console.log(points, evt);
-					};
-				}]);
-		</script>
+		<script src="config.js"></script>
+		<script src="graphController.js"></script>
+		<script src="bindings.js"></script>
 	</head>
 	<body ng-app="app">
 		<div class="container-fluid">
@@ -51,7 +28,7 @@
 						<li><a href="#">Export</a></li>
 					</ul>			
 				</div>
-				<div class="col-md-10 main" ng-controller="LineCtrl">
+				<div class="col-md-10 main" ng-controller="GraphController as controller">
 					<h1 class="page-header">Dashboard</h1>
 					<canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-click="onClick"></canvas> 
 				</div>

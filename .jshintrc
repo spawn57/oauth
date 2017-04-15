@@ -1,0 +1,11 @@
+{
+	"esversion": 5,
+	"undef": true,
+	"unused": true,
+	"strict": true,
+	"globals": {
+		"app": true,
+		"angular": true,
+		"console": true
+	}
+}
