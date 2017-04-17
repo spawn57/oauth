@@ -1,5 +1,5 @@
 # Prerequisites
-Ensure that both npm and bower are working on your computer.  This app has been tested on a on a Ubuntu 17.04 with node 4.7.2 and npm 4.5.0
+Ensure that both npm and bower are working on your computer.  This app has been tested on a on a Ubuntu 17.04 with node 4.7.2, npm 4.5.0 and bower 1.8.0
 
 # Run the app
 Run the following commands to run the sample program

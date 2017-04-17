@@ -4,6 +4,7 @@
   "description": "Learning oauth",
   "main": "bindings.js",
   "dependencies": {
+    "bower": "^1.8.0",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "google-auth-library": "^0.10.0",
