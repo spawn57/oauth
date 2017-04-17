@@ -12,6 +12,4 @@ app.config(['ChartJsProvider', function (ChartJsProvider) {
 	ChartJsProvider.setOptions('line', {
 	showLines: false
 	});
-}])
-;
-
+}]);
