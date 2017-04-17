@@ -6,9 +6,9 @@ app.ChatController = function ($scope) {
 	
 	this.setupChat();
 	
-	self.$scope.hasNewMessage = function () {		
+	self.$scope.hasNewMessage = function () {
 		return !(self.$scope.newMessage === undefined || self.$scope.newMessage === '');
-	}
+	};
 };
 
 app.ChatController.$inject =  ['$scope'];
@@ -21,7 +21,7 @@ app.ChatController.prototype.setupChat = function () {
 	
 
 	self.$scope.socket = new io.connect('ws://localhost:7777');
-	self.$scope.socket.on('connect', function (data) {
+	self.$scope.socket.on('connect', function () {
 		self.$scope.socket.emit('join', 'Hello server from client');
 	});
 	
@@ -56,10 +56,10 @@ app.ChatController.prototype.sendMessage = function () {
 	
 	var message = this.username + ': ' + this.$scope.newMessage;
 	this.$scope.socket.emit('messages', message);
-}
+};
 
 app.ChatController.prototype.resetMessagebox =  function () {
 	'use strict';
 	
 	this.$scope.newMessage = '';
-}
+};

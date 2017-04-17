@@ -4,8 +4,21 @@
 	"unused": true,
 	"strict": true,
 	"globals": {
+		// angular
 		"app": true,
 		"angular": true,
-		"console": true
+		"console": true,
+		"inject": true,
+		// node.js
+		"require": true,
+		"__dirname": true,
+		"io" : true,
+		// jasmine 
+		"beforeEach": true,
+		"jasmine": true,
+		"describe": true,
+		"expect": true,
+		"it": true,
+		"spyOn": true
 	}
 }
