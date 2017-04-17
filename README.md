@@ -1,19 +1,21 @@
-# Ensure to run the following commands to run the sample program
+# Prerequisites
+Ensure that both npm and bower are working on your computer.  This app has been tested on a on a Ubuntu 17.04 with node 4.7.2 and npm 4.5.0
 
-# install all the node.js dependecies by running
-npm install 
+# Run the app
+Run the following commands to run the sample program
 
-# install all the frotend dependencies by running
-cd client
-bower install
+1. install all the node.js dependecies by running the commands
+`npm install`
 
-# open index.html to get into the login page
-# open main.html to see the chart
+2. install all the frotend dependencies by running
+`cd client`
+`bower install`
 
-# run the server by using the commands
-npm start
+3. run the server by using the commands
+`npm start`
 
-# open the browser to http://localhost:7777/main.html to see the app
+4.open the browser to [http://localhost:7777/](http://localhost:7777/) to see the app
 
-# To run the unit test for the client use the command
-./node_modules/karma/bin/karma start
+# Running the test
+1. To run the unit test for the client use the command
+`./node_modules/karma/bin/karma start`
