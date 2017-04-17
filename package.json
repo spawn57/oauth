@@ -5,6 +5,8 @@
   "main": "bindings.js",
   "dependencies": {
     "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "google-auth-library": "^0.10.0",
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
