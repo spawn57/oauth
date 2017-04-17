@@ -8,16 +8,23 @@ Run the following commands to run the sample program
 
 `npm install`
 
-2. install all the frotend dependencies by running
+2. go to the client dir
 
 `cd client`
+
+3. install all the frotend dependencies by running
+
 `bower install`
 
-3. run the server by using the commands
+4. go back to the project root folder
+
+`cd ..`
+
+5. run the server by using the commands
 
 `npm start`
 
-4. open the browser to [http://localhost:7777/](http://localhost:7777/) to see the app
+6. open the browser to [http://localhost:7777/](http://localhost:7777/) to see the app
 
 # Running the test
 1. To run the unit test for the client use the command
